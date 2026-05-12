@@ -165,13 +165,11 @@ public class Main {
         System.out.println("Линия 3: " + third_Line);
     }
 
-    //FIXME: п.7 Методы в PascalCase, п.8 переменные в camel_Case 
-    // private static void ChangeFirstLineWithoutAffectingthird_Line() {
+    //FIXME: п.7 Методы в PascalCase
+    // private static void changeFirstLineWithoutAffectingthirdLine() {
     //FIXTO:
-    private static void ChangeFirstLineWithoutAffectingThird_Line() {
-        //FIXME: п.8 переменные в camel_Case 
-        // boolean success = false;
-        //FIXTO:
+    private static void ChangeFirstLineWithoutAffectingThirdLine() {
+        
         boolean success = false;
 
         while (!success) {
@@ -181,7 +179,7 @@ public class Main {
 
             //FIXME: п.8 Переменные пишутся в camel_Case 
             // Point originalFirstPoint = first_Line.GetStart();
-            // Point third_LineStartBefore = new Point(third_Line.GetStart().getX(), third_Line.GetStart().getY());
+            // Point thirdLineStartBefore = new Point(third_Line.GetStart().getX(), third_Line.GetStart().getY());
             //FIXTO:
             Point original_First_Point = first_Line.GetStart();
             Point third_Line_Start_Before = new Point(third_Line.GetStart().getX(), third_Line.GetStart().getY());
@@ -248,7 +246,7 @@ public class Main {
         System.out.println("Линия изменена: " + line);
     }
 
-    //FIXME: п.7 Методы в PascalCase 
+    //FIXME: п.7 Методы в PascalCase без сокращений 
     // private static void task3() {
     //FIXTO:
     private static void Third_Task() {
@@ -295,7 +293,7 @@ public class Main {
         System.out.println("   " + student_Andrey);
     }
 
-    //FIXME: п.7 Методы в PascalCase 
+    //FIXME: п.7 Методы в PascalCase без сокращений
     // private static void task4() {
     //FIXTO:
     private static void Fourth_Task() {
@@ -312,7 +310,7 @@ public class Main {
         System.out.println("3. Точка с координатами 7;8: " + point3);
     }
 
-    //FIXME: п.7 Методы в PascalCase
+    //FIXME: п.7 Методы в PascalCase без сокращений 
     // private static void task5() {
     //FIXTO:
     private static void Fifth_Task() {
@@ -331,7 +329,7 @@ public class Main {
         System.out.println("   " + student_Maxim);
     }
 
-    //FIXME: п.7 Методы в PascalCase 
+    //FIXME: п.7 Методы в PascalCase без сокращений 
     // private static void task6() {
     //FIXTO:
     private static void Sixth_Task() {
