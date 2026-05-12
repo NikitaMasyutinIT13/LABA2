@@ -9,14 +9,16 @@ public class Line {
     // }
     //FIXTO:
     public Line(Point start, Point end) {
+        // По заданию 2.1: линия описывается координатами начала и конца
+        // Валидация: точки не могут быть null
         if (start == null || end == null) {
-            throw new IllegalArgumentException("Точки не могут быть null");
+            throw new IllegalArgumentException("Начальная и конечная точки не могут быть null");
         }
-        this.start = start;
-        this.end = end;
+        this.start = new Point(start.GetX(), start.GetY());
+        this.end = new Point(end.GetX(), end.GetY());
     }
 
-    //FIXME: п.11 Использованы сокращения x1, x2 вместо понятных имён, п.8 переменные должны быть в camel_Case (start_X, end_X)
+    //FIXME: п.11 Использованы сокращения x1, x2
     // public Line(int y, int x1, int x2) {
     //     this.start = new Point(x1, y);
     //     this.end = new Point(x2, y);
@@ -27,46 +29,47 @@ public class Line {
         this.end = new Point(end_X, y);
     }
 
-    //FIXME: п.14 Геттер возвращает прямую ссылку на внутреннее состояние, п.7 методы должны быть в PascalCase
+    //FIXME: п.7 Методы в PascalCase, п.14 возвращает копию
     // public Point getStart() {
     //     return start;
     // }
     //FIXTO:
     public Point GetStart() {
-        return new Point(start.getX(), start.getY());
+        // Возвращаем копию, чтобы нельзя было изменить внутреннее состояние
+        return new Point(start.GetX(), start.GetY());
     }
 
-    //FIXME: п.14 Геттер возвращает прямую ссылку на внутреннее состояние, п.7 методы должны быть в PascalCase
+    //FIXME: п.7 Методы в PascalCase, п.14 возвращает копию
     // public Point getEnd() {
     //     return end;
     // }
     //FIXTO:
     public Point GetEnd() {
-        return new Point(end.getX(), end.getY());
+        return new Point(end.GetX(), end.GetY());
     }
 
-    //FIXME: п.13 Сеттер не валидирует данные (нет проверки на null), п.7 методы должны быть в PascalCase
+    //FIXME: п.13 Сеттер не валидирует данные, п.7 методы в PascalCase
     // public void setStart(Point start) {
     //     this.start = start;
     // }
     //FIXTO:
     public void SetStart(Point start) {
         if (start == null) {
-            throw new IllegalArgumentException("Точка не может быть null");
+            throw new IllegalArgumentException("Начальная точка не может быть null");
         }
-        this.start = new Point(start.getX(), start.getY());
+        this.start = new Point(start.GetX(), start.GetY());
     }
 
-    //FIXME: п.13 Сеттер не валидирует данные (нет проверки на null), п.7 методы должны быть в PascalCase
+    //FIXME: п.13 Сеттер не валидирует данные, п.7 методы в PascalCase
     // public void setEnd(Point end) {
     //     this.end = end;
     // }
     //FIXTO:
     public void SetEnd(Point end) {
         if (end == null) {
-            throw new IllegalArgumentException("Точка не может быть null");
+            throw new IllegalArgumentException("Конечная точка не может быть null");
         }
-        this.end = new Point(end.getX(), end.getY());
+        this.end = new Point(end.GetX(), end.GetY());
     }
 
     @Override
@@ -74,7 +77,7 @@ public class Line {
         return "Линия от " + start.toString() + " до " + end.toString();
     }
 
-    //FIXME: п.8 Имена переменных должны быть в camel_Case (dx, dy используют сокращения, нет подчёркиваний)
+    //FIXME: п.8 Переменные в camel_Case (dx, dy), п.7 методы в PascalCase
     // public double getLength() {
     //     int dx = end.getX() - start.getX();
     //     int dy = end.getY() - start.getY();
@@ -82,8 +85,9 @@ public class Line {
     // }
     //FIXTO:
     public double GetLength() {
-        int delta_X = end.getX() - start.getX();
-        int delta_Y = end.getY() - start.getY();
+        // По заданию 5.3: возвращает расстояние между точками начала и конца
+        int delta_X = end.GetX() - start.GetX();
+        int delta_Y = end.GetY() - start.GetY();
         return Math.sqrt(delta_X * delta_X + delta_Y * delta_Y);
     }
 }
