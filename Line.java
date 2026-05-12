@@ -2,7 +2,7 @@
 public class Line {
   private Point start;
   private Point end;
-//FIXME: Код не должен содержать комментариев по типу "конструктор, геттер"
+//FIXME: Код не должен содержать комментариев по типу "конструктор, геттер", не использовать сокращения
   // // Конструктор
   // public Line(Point start, Point end) {
   //   this.start = start;
@@ -10,19 +10,23 @@ public class Line {
   // }
 
   // // Конструктор для горизонтальной линии
-  // public Line(int y, int x1, int x2) {
-  //   this.start = new Point(x1, y);
-  //   this.end = new Point(x2, y);
+  // public Line(int y, int start_X, int end_X) {
+  //   this.start = new Point(start_X, y);
+  //   this.end = new Point(end_X, y);
   // }
 //FIXTO:
   public Line(Point start, Point end) {
     this.start = start;
     this.end = end;
   }
-  
-  public Line(int y, int x1, int x2) {
-    this.start = new Point(x1, y);
-    this.end = new Point(x2, y);
+  //FIXME: не использовать сокращения
+  // public Line(int y, int x1, int x2) {
+  //   this.start = new Point(x1, y);
+  //   this.end = new Point(x2, y);
+  //FIXTO:
+   public Line(int y, int start_X, int end_X) {
+    this.start = new Point(start_X, y);
+    this.end = new Point(end_X, y);
   }
   //FIXME: Код не должен содержать комментариев по типу "конструктор, геттер", методы пишутся в PascalCase
 
