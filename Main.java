@@ -1,378 +1,366 @@
 import java.util.Arrays;
 
-
 public class Main {
-  //FIXME: не использовать сокращения 
-  // private static Point point1, point2, point3;
-  // private static Line first_Line, second_Line, third_Line;
-  //FIXME:
-  private static Point first_Point, second_Point, third_Point;
-  private static Line first_Line, second_Line, third_Line;
-  private static Student studentVasya, studentPetya, studentAndrey, studentMaxim;
-
-  public static void main(String[] args) {
-    System.out.println("ПРОГРАММА ДЛЯ ВЫПОЛНЕНИЯ 6 ЗАДАНИЙ");
-
-    showMenu();
-    Validator.closeScanner();
-
-    System.out.println("\nПРОГРАММА ЗАВЕРШЕНА");
-  }
-//FIXME: Методы в PascalCase
-  // private static void showMenu() {
-//FIXTO:
-   private static void ShowMenu() {
-    while (true) {
-      System.out.println("\n=== ГЛАВНОЕ МЕНЮ ===");
-      System.out.println("1. Точка координат (3 точки с разными координатами)");
-      System.out.println("2. Прямая (5 пунктов с линиями)");
-      System.out.println("3. Студент (копирование оценок)");
-      System.out.println("4. Создаем Точку (обязательные координаты)");
-      System.out.println("5. Создаем Студента (разные конструкторы)");
-      System.out.println("6. Студент отличник (средняя оценка и отличник)");
-      System.out.println("0. Выход");
-
-      int choice = Validator.getMenuChoice();
-
-      switch (choice) {
-        case 1:
-          task1();
-          break;
-        case 2:
-          task2();
-          break;
-        case 3:
-          task3();
-          break;
-        case 4:
-          task4();
-          break;
-        case 5:
-          task5();
-          break;
-        case 6:
-          task6();
-          break;
-        case 0:
-          return;
-        default:
-          System.out.println("Неверный выбор! Попробуйте снова.");
-      }
-    }
-  }
-
-//FIXME: Методы в PascalCase
-  // private static void task1() {
-  //FIXTO:
-    private static void first_Task() {
-
-    System.out.println("\nЗАДАНИЕ 1 - ТОЧКА КООРДИНАТ");
-    System.out.println("Создание трех точек с разными координатами");
-    System.out.println("Введите координаты с клавиатуры:\n");
-
-    System.out.println("Точка 1:");
-    //FIXME: названия без сокращеений
-    // int x1 = Validator.getNumber("Введите X: ");
-    // int y1 = Validator.getNumber("Введите Y: ");
-    // point1 = new Point(x1, y1);
-    //   System.out.println("\nТочка 2:");
-    // int second_X = Validator.getNumber("Введите X: ");
-    // int second_Y = Validator.getNumber("Введите Y: ");
-    // point2 = new Point(second_X, second_Y);
-
-    // System.out.println("\nТочка 3:");
-    // int x3 = Validator.getNumber("Введите X: ");
-    // int y3 = Validator.getNumber("Введите Y: ");
-    // point3 = new Point(x3, y3);
+    //FIXME: п.11 Использованы сокращения 
+    // private static Point point1, point2, point3;
+    // private static Line first_Line, second_Line, third_Line;
     //FIXTO:
-      int first_X = Validator.getNumber("Введите X: ");
-    int first_Y = Validator.getNumber("Введите Y: ");
-    point1 = new Point(first_X, first_Y);
-    System.out.println("\nТочка 2:");
-    int second_X = Validator.getNumber("Введите X: ");
-    int second_Y = Validator.getNumber("Введите Y: ");
-    point2 = new Point(second_X, second_Y);
+    private static Point first_Point, second_Point, third_Point;
+    private static Line first_Line, second_Line, third_Line;
+    private static Student student_Vasya, student_Petya, student_Andrey, student_Maxim;
 
-    System.out.println("\nТочка 3:");
-    int third_X = Validator.getNumber("Введите X: ");
-    int third_Y = Validator.getNumber("Введите Y: ");
-    point3 = new Point(third_X, third_Y);
+    public static void main(String[] args) {
+        System.out.println("ПРОГРАММА ДЛЯ ВЫПОЛНЕНИЯ 6 ЗАДАНИЙ");
 
-    System.out.println("\nТочки успешно созданы!");
-    System.out.println("Текстовое представление:");
-    System.out.println("Точка 1: " + point1.toString());
-    System.out.println("Точка 2: " + point2.toString());
-    System.out.println("Точка 3: " + point3.toString());
-  }
+        ShowMenu();
+        Validator.closeScanner();
 
-//FIXME: методы в PascalCase, названия без сокращений
-  // private static void task2() {
-  //FIXTO:
-    private static void second_Task() {
-
-    System.out.println("\nЗАДАНИЕ 2 - ПРЯМАЯ");
-//FIXME: названия без сокращений
-  //   System.out.println("1. Линия 1 с началом в т. {1;3} и концом в т.{23;8}");
-  //   Point start1 = new Point(1, 3);
-  //   Point end1 = new Point(23, 8);
-  //   line1 = new Line(start1, end1);
-  //   System.out.println("   " + line1);
-
-  //   System.out.println("2. Линия 2, горизонтальная, на высоте 10, от точки 5 до точки 25");
-  //   line2 = new Line(10, 5, 25);
-  //   System.out.println("   " + line2);
-
-  //   System.out.println("3. Линия 3 (начинается там же, где линия 1, заканчивается там же, где линия 2)");
-  //   line3 = new Line(line1.getStart(), line2.getEnd());
-  //   System.out.println("   " + line3);
-
-  //   System.out.println("\n4. Изменение координат первой и второй линий");
-  //   System.out.println("Текущее состояние линии 3: " + line3);
-
-  //   System.out.println("\n--- Изменение Линии 1 ---");
-  //   changeLineFromInput(line1);
-
-  //   System.out.println("\n--- Изменение Линии 2 ---");
-  //   changeLineFromInput(line2);
-
-  //   System.out.println("\nПосле изменения линий 1 и 2:");
-  //   System.out.println("Линия 1: " + line1);
-  //   System.out.println("Линия 2: " + line2);
-  //   System.out.println("Линия 3: " + line3);
-
-  //   boolean line3ChangedCorrectly =
-  //           line3.getStart().equals(line1.getStart()) &&
-  //                   line3.getEnd().equals(line2.getEnd());
-
-  //   if (line3ChangedCorrectly) {
-  //     System.out.println("Линия 3 корректно изменилась согласно требованиям пункта 3");
-  //   }
-
-  //   System.out.println("\n5. Изменение координат первой линии без изменения третьей линии");
-  //   changeLine1WithoutAffectingLine3();
-
-  //   System.out.println("\nФинальное состояние:");
-  //   System.out.println("Линия 1: " + line1);
-  //   System.out.println("Линия 2: " + line2);
-  //   System.out.println("Линия 3: " + line3);
-  // }
-//FIXTO:
-      System.out.println("1. Линия 1 с началом в т. {1;3} и концом в т.{23;8}");
-    Point first_Point = new Point(1, 3);
-    Point end1 = new Point(23, 8);
-    first_Line = new Line(first_Point, end1);
-    System.out.println("   " + first_Line);
-
-    System.out.println("2. Линия 2, горизонтальная, на высоте 10, от точки 5 до точки 25");
-    second_Line = new Line(10, 5, 25);
-    System.out.println("   " + second_Line);
-
-    System.out.println("3. Линия 3 (начинается там же, где линия 1, заканчивается там же, где линия 2)");
-    third_Line = new Line(first_Line.getStart(), second_Line.getEnd());
-    System.out.println("   " + third_Line);
-
-    System.out.println("\n4. Изменение координат первой и второй линий");
-    System.out.println("Текущее состояние линии 3: " + third_Line);
-
-    System.out.println("\n--- Изменение Линии 1 ---");
-    ChangeLineFromInput(first_Line);
-
-    System.out.println("\n--- Изменение Линии 2 ---");
-    ChangeLineFromInput(second_Line);
-
-    System.out.println("\nПосле изменения линий 1 и 2:");
-    System.out.println("Линия 1: " + first_Line);
-    System.out.println("Линия 2: " + second_Line);
-    System.out.println("Линия 3: " + third_Line);
-//FIXME: переменные в camel_Case
-    // boolean ThirdLineChangedCorrectly =
-//FIXTO:
-       boolean third_Line_Changed_Correctly =
-            third_Line.getStart().equals(first_Line.getStart()) &&
-                    third_Line.getEnd().equals(second_Line.getEnd());
-
-    if (third_Line_Changed_Correctly) {
-      System.out.println("Линия 3 корректно изменилась согласно требованиям пункта 3");
+        System.out.println("\nПРОГРАММА ЗАВЕРШЕНА");
     }
 
-    System.out.println("\n5. Изменение координат первой линии без изменения третьей линии");
-    ChangeFirstLineWithoutAffectingthird_Line();
-
-    System.out.println("\nФинальное состояние:");
-    System.out.println("Линия 1: " + first_Line);
-    System.out.println("Линия 2: " + second_Line);
-    System.out.println("Линия 3: " + third_Line);
-  }
-//FIXME: переменные в camel_Case
-  // private static void ChangeFirstLineWithoutAffectingthird_Line() {
-//FIXTO:
-    private static void change_First_Line_Without_Affecting_Third_Line() {
-
-    boolean success = false;
-
-    while (!success) {
-      System.out.println("\n--- Изменение Линии 1 без влияния на Линию 3 ---");
-      System.out.println("Текущая Линия 1: " + first_Line);
-      System.out.println("Текущая Линия 3: " + third_Line);
-    //FIXME: переменные пишутся в camel_Case
-      // Point originalFirstPoint = first_Line.getStart();
-      // Point third_LineStartBefore = new Point(third_Line.getStart().getX(), third_Line.getStart().getY());
+    //FIXME: п.7 Методы должны быть в PascalCase 
+    // private static void showMenu() {
     //FIXTO:
-      Point original_First_Point = first_Line.getStart();
-      Point third_Line_Start_Before = new Point(third_Line.getStart().getX(), third_Line.getStart().getY());
+    private static void ShowMenu() {
+        while (true) {
+            System.out.println("\n=== ГЛАВНОЕ МЕНЮ ===");
+            System.out.println("1. Точка координат (3 точки с разными координатами)");
+            System.out.println("2. Прямая (5 пунктов с линиями)");
+            System.out.println("3. Студент (копирование оценок)");
+            System.out.println("4. Создаем Точку (обязательные координаты)");
+            System.out.println("5. Создаем Студента (разные конструкторы)");
+            System.out.println("6. Студент отличник (средняя оценка и отличник)");
+            System.out.println("0. Выход");
 
-      System.out.println("Введите новые координаты для Линии 1:");
+            int choice = Validator.getMenuChoice();
 
-      System.out.println("Начальная точка:");
-      int startX = Validator.getNumber("Введите X начала: ");
-      int startY = Validator.getNumber("Введите Y начала: ");
-
-      System.out.println("Конечная точка:");
-      int endX = Validator.getNumber("Введите X конца: ");
-      int endY = Validator.getNumber("Введите Y конца: ");
-
-      Point newfirst_Point = new Point(startX, startY);
-      Point newEnd1 = new Point(endX, endY);
-
-      first_Line.setStart(newfirst_Point);
-      first_Line.setEnd(newEnd1);
-
-      System.out.println("После изменения:");
-      System.out.println("Линия 1: " + first_Line);
-      System.out.println("Линия 3: " + third_Line);
-
-      boolean firstPointChanged = !originalFirstPoint.equals(first_Line.getStart());
-
-      if (firstPointChanged) {
-        System.out.println("\nОШИБКА: Первая точка первой линии изменилась!");
-        System.out.println("Первая точка до: " + originalFirstPoint);
-        System.out.println("Первая точка после: " + first_Line.getStart());
-        System.out.println("Пожалуйста, введите координаты заново...");
-
-        first_Line.setStart(originalFirstPoint);
-        first_Line.setEnd(new Point(endX, endY));
-      } else {
-        System.out.println("\nПервая точка первой линии не изменилась!");
-        success = true;
-      }
+            switch (choice) {
+                case 1:
+                    First_Task();
+                    break;
+                case 2:
+                    Second_Task();
+                    break;
+                case 3:
+                    Third_Task();
+                    break;
+                case 4:
+                    Fourth_Task();
+                    break;
+                case 5:
+                    Fifth_Task();
+                    break;
+                case 6:
+                    Sixth_Task();
+                    break;
+                case 0:
+                    return;
+                default:
+                    System.out.println("Неверный выбор! Попробуйте снова.");
+            }
+        }
     }
-  }
 
-  private static void changeLineFromInput(Line line) {
-    System.out.println("Введите новые координаты:");
+    //FIXME: п.7 Методы в PascalCase , п.11 без сокращений
+    // private static void task1() {
+    //FIXTO:
+    private static void First_Task() {
+        System.out.println("\nЗАДАНИЕ 1 - ТОЧКА КООРДИНАТ");
+        System.out.println("Создание трех точек с разными координатами");
+        System.out.println("Введите координаты с клавиатуры:\n");
 
-    System.out.println("Начальная точка:");
-    int startX = Validator.getNumber("Введите X начала: ");
-    int startY = Validator.getNumber("Введите Y начала: ");
+        System.out.println("Точка 1:");
+        //FIXME: п.11 Использованы сокращения 
+        // int x1 = Validator.getNumber("Введите X: ");
+        // int y1 = Validator.getNumber("Введите Y: ");
+        // first_Point = new Point(x1, y1);
+        //FIXTO:
+        int first_X = Validator.getNumber("Введите X: ");
+        int first_Y = Validator.getNumber("Введите Y: ");
+        first_Point = new Point(first_X, first_Y);
 
-    System.out.println("Конечная точка:");
-    int endX = Validator.getNumber("Введите X конца: ");
-    int endY = Validator.getNumber("Введите Y конца: ");
+        System.out.println("\nТочка 2:");
+        //FIXME: п.11 Использованы сокращения 
+        // int x2 = Validator.getNumber("Введите X: ");
+        // int y2 = Validator.getNumber("Введите Y: ");
+        // second_Point = new Point(x2, y2);
+        //FIXTO:
+        int second_X = Validator.getNumber("Введите X: ");
+        int second_Y = Validator.getNumber("Введите Y: ");
+        second_Point = new Point(second_X, second_Y);
 
-    line.getStart().setX(startX);
-    line.getStart().setY(startY);
-    line.getEnd().setX(endX);
-    line.getEnd().setY(endY);
+        System.out.println("\nТочка 3:");
+        //FIXME: п.11 Использованы сокращения 
+        // int x3 = Validator.getNumber("Введите X: ");
+        // int y3 = Validator.getNumber("Введите Y: ");
+        // third_Point = new Point(x3, y3);
+        //FIXTO:
+        int third_X = Validator.getNumber("Введите X: ");
+        int third_Y = Validator.getNumber("Введите Y: ");
+        third_Point = new Point(third_X, third_Y);
 
-    System.out.println("Линия изменена: " + line);
-  }
+        System.out.println("\nТочки успешно созданы!");
+        System.out.println("Текстовое представление:");
+        System.out.println("Точка 1: " + first_Point.toString());
+        System.out.println("Точка 2: " + second_Point.toString());
+        System.out.println("Точка 3: " + third_Point.toString());
+    }
 
-  //СТУДЕНТ
-  private static void task3() {
-    System.out.println("\n=== ЗАДАНИЕ 3 - СТУДЕНТ ===");
+    //FIXME: п.7 Методы в PascalCase , п.11 названия без сокращений
+    // private static void task2() {
+    //FIXTO:
+    private static void Second_Task() {
+        System.out.println("\nЗАДАНИЕ 2 - ПРЯМАЯ");
 
-    System.out.println("1. Создать студента Васю с оценками: 3,4,5");
-    int[] vasyaGrades = {3, 4, 5};
-    studentVasya = new Student("Вася");
-    studentVasya.setGradesDirect(vasyaGrades);
-    System.out.println("   " + studentVasya);
+        System.out.println("1. Линия 1 с началом в т. {1;3} и концом в т.{23;8}");
+        //FIXME: п.11 Использованы сокращения
+        // Point start1 = new Point(1, 3);
+        // Point end1 = new Point(23, 8);
+        // first_Line = new Line(start1, end1);
+        //FIXTO:
+        Point first_Start_Point = new Point(1, 3);
+        Point first_End_Point = new Point(23, 8);
+        first_Line = new Line(first_Start_Point, first_End_Point);
+        System.out.println("   " + first_Line);
 
-    System.out.println("2. Создать студента Петю и скопировать оценки Васи");
-    studentPetya = new Student("Петя");
-    studentPetya.setGradesDirect(vasyaGrades);
-    System.out.println("   " + studentPetya);
+        System.out.println("2. Линия 2, горизонтальная, на высоте 10, от точки 5 до точки 25");
+        second_Line = new Line(10, 5, 25);
+        System.out.println("   " + second_Line);
 
-    System.out.println("3. Заменить первую оценку Пети на число 5");
-    vasyaGrades[0] = 5;
+        System.out.println("3. Линия 3 (начинается там же, где линия 1, заканчивается там же, где линия 2)");
+        third_Line = new Line(first_Line.GetStart(), second_Line.GetEnd());
+        System.out.println("   " + third_Line);
 
-    System.out.println("После изменения:");
-    System.out.println("   " + studentVasya);
-    System.out.println("   " + studentPetya);
+        System.out.println("\n4. Изменение координат первой и второй линий");
+        System.out.println("Текущее состояние линии 3: " + third_Line);
 
-    System.out.println("\nОбъяснение результата:");
-    System.out.println("Оба студента имеют одинаковые оценки, потому что при копировании");
-    System.out.println("мы скопировали ссылку на один и тот же массив оценок.");
-    System.out.println("Изменение оценок у одного студента влияет на другого.");
+        System.out.println("\n--- Изменение Линии 1 ---");
+        ChangeLineFromInput(first_Line);
 
-    System.out.println("\n4. Создать студента Андрея с независимой копией оценок");
-    int[] independentGrades = vasyaGrades.clone();
-    studentAndrey = new Student("Андрей", independentGrades);
-    System.out.println("   " + studentAndrey);
+        System.out.println("\n--- Изменение Линии 2 ---");
+        ChangeLineFromInput(second_Line);
 
-    vasyaGrades[1] = 2;
-    System.out.println("После изменения второй оценки Васи:");
-    System.out.println("   " + studentVasya);
-    System.out.println("   " + studentPetya);
-    System.out.println("   " + studentAndrey);
-  }
+        System.out.println("\nПосле изменения линий 1 и 2:");
+        System.out.println("Линия 1: " + first_Line);
+        System.out.println("Линия 2: " + second_Line);
+        System.out.println("Линия 3: " + third_Line);
 
-  //СОЗДАЕМ ТОЧКУ
-  private static void task4() {
-    System.out.println("\n=== ЗАДАНИЕ 4 - СОЗДАЕМ ТОЧКУ ===");
-    System.out.println("Создание точек с обязательными координатами:");
+        //FIXME: п.8 Переменные должны быть в camel_Case 
+        // boolean ThirdLineChangedCorrectly =
+        //FIXTO:
+        boolean third_Line_Changed_Correctly =
+            third_Line.GetStart().equals(first_Line.GetStart()) &&
+            third_Line.GetEnd().equals(second_Line.GetEnd());
 
-    Point point1 = new Point(3, 5);
-    System.out.println("1. Точка с координатами 3;5: " + point1);
+        if (third_Line_Changed_Correctly) {
+            System.out.println("Линия 3 корректно изменилась согласно требованиям пункта 3");
+        }
 
-    Point point2 = new Point(25, 6);
-    System.out.println("2. Точка с координатами 25;6: " + point2);
+        System.out.println("\n5. Изменение координат первой линии без изменения третьей линии");
+        ChangeFirstLineWithoutAffectingThird_Line();
 
-    Point point3 = new Point(7, 8);
-    System.out.println("3. Точка с координатами 7;8: " + point3);
+        System.out.println("\nФинальное состояние:");
+        System.out.println("Линия 1: " + first_Line);
+        System.out.println("Линия 2: " + second_Line);
+        System.out.println("Линия 3: " + third_Line);
+    }
 
-  }
+    //FIXME: п.7 Методы в PascalCase, п.8 переменные в camel_Case 
+    // private static void ChangeFirstLineWithoutAffectingthird_Line() {
+    //FIXTO:
+    private static void ChangeFirstLineWithoutAffectingThird_Line() {
+        //FIXME: п.8 переменные в camel_Case 
+        // boolean success = false;
+        //FIXTO:
+        boolean success = false;
 
+        while (!success) {
+            System.out.println("\n--- Изменение Линии 1 без влияния на Линию 3 ---");
+            System.out.println("Текущая Линия 1: " + first_Line);
+            System.out.println("Текущая Линия 3: " + third_Line);
 
-  //Создаем Студента
+            //FIXME: п.8 Переменные пишутся в camel_Case 
+            // Point originalFirstPoint = first_Line.GetStart();
+            // Point third_LineStartBefore = new Point(third_Line.GetStart().getX(), third_Line.GetStart().getY());
+            //FIXTO:
+            Point original_First_Point = first_Line.GetStart();
+            Point third_Line_Start_Before = new Point(third_Line.GetStart().getX(), third_Line.GetStart().getY());
 
-  private static void task5() {
-    System.out.println("\n=== ЗАДАНИЕ 5 - СОЗДАЕМ СТУДЕНТА ===");
+            System.out.println("Введите новые координаты для Линии 1:");
 
-    System.out.println("1. Студент Вася с оценками: 3,4,5");
-    int[] vasyaGrades = {3, 4, 5};
-    studentVasya = new Student("Вася", vasyaGrades);
-    System.out.println("   " + studentVasya);
+            System.out.println("Начальная точка:");
+            int start_X = Validator.getNumber("Введите X начала: ");
+            int start_Y = Validator.getNumber("Введите Y начала: ");
 
-    System.out.println("2. Студент Максим без оценок");
-    studentMaxim = new Student("Максим");
-    System.out.println("   " + studentMaxim);
+            System.out.println("Конечная точка:");
+            int end_X = Validator.getNumber("Введите X конца: ");
+            int end_Y = Validator.getNumber("Введите Y конца: ");
 
-  }
+            Point new_First_Point = new Point(start_X, start_Y);
+            Point new_End_Point = new Point(end_X, end_Y);
 
+            first_Line.SetStart(new_First_Point);
+            first_Line.SetEnd(new_End_Point);
 
-  //Студент отличник
+            System.out.println("После изменения:");
+            System.out.println("Линия 1: " + first_Line);
+            System.out.println("Линия 3: " + third_Line);
 
-  private static void task6() {
-    System.out.println("\n=== ЗАДАНИЕ 6 - СТУДЕНТ ОТЛИЧНИК ===");
+            //FIXME: п.8 Переменные пишутся в camel_Case 
+            // boolean firstPointChanged = !originalFirstPoint.equals(first_Line.GetStart());
+            //FIXTO:
+            boolean first_Point_Changed = !original_First_Point.equals(first_Line.GetStart());
 
-    System.out.println("1. Студент Вася с оценками 3,4,5,4");
-    int[] vasyaGrades = {3, 4, 5, 4};
-    studentVasya = new Student("Вася", vasyaGrades);
-    System.out.println("   " + studentVasya);
+            if (first_Point_Changed) {
+                System.out.println("\nОШИБКА: Первая точка первой линии изменилась!");
+                System.out.println("Первая точка до: " + original_First_Point);
+                System.out.println("Первая точка после: " + first_Line.GetStart());
+                System.out.println("Пожалуйста, введите координаты заново...");
 
-    System.out.println("2. Студент Петя с оценками 5,5,5,5");
-    int[] petyaGrades = {5, 5, 5, 5};
-    studentPetya = new Student("Петя", petyaGrades);
-    System.out.println("   " + studentPetya);
+                first_Line.SetStart(original_First_Point);
+                first_Line.SetEnd(new_End_Point);
+            } else {
+                System.out.println("\nПервая точка первой линии не изменилась!");
+                success = true;
+            }
+        }
+    }
 
-    System.out.println("\n3. Информация о студентах:");
+    //FIXME: п.7 Методы в PascalCase 
+    // private static void changeLineFromInput(Line line) {
+    //FIXTO:
+    private static void ChangeLineFromInput(Line line) {
+        System.out.println("Введите новые координаты:");
 
-    System.out.println("Вася:");
-    System.out.println("   Средний балл: " + studentVasya.getAverageGrade());
-    System.out.println("   Отличник: " + (studentVasya.isExcellentStudent() ? "Да" : "Нет"));
+        System.out.println("Начальная точка:");
+        int start_X = Validator.getNumber("Введите X начала: ");
+        int start_Y = Validator.getNumber("Введите Y начала: ");
 
-    System.out.println("Петя:");
-    System.out.println("   Средний балл: " + studentPetya.getAverageGrade());
-    System.out.println("   Отличник: " + (studentPetya.isExcellentStudent() ? "Да" : "Нет"));
-  }
+        System.out.println("Конечная точка:");
+        int end_X = Validator.getNumber("Введите X конца: ");
+        int end_Y = Validator.getNumber("Введите Y конца: ");
+
+        line.GetStart().setX(start_X);
+        line.GetStart().setY(start_Y);
+        line.GetEnd().setX(end_X);
+        line.GetEnd().setY(end_Y);
+
+        System.out.println("Линия изменена: " + line);
+    }
+
+    //FIXME: п.7 Методы в PascalCase 
+    // private static void task3() {
+    //FIXTO:
+    private static void Third_Task() {
+        System.out.println("\n=== ЗАДАНИЕ 3 - СТУДЕНТ ===");
+
+        System.out.println("1. Создать студента Васю с оценками: 3,4,5");
+        //FIXME: п.8 переменные в camel_Case
+        // int[] vasyaGrades = {3, 4, 5};
+        //FIXTO:
+        int[] vasya_Grades = {3, 4, 5};
+        student_Vasya = new Student("Вася");
+        student_Vasya.setGradesDirect(vasya_Grades);
+        System.out.println("   " + student_Vasya);
+
+        System.out.println("2. Создать студента Петю и скопировать оценки Васи");
+        student_Petya = new Student("Петя");
+        student_Petya.setGradesDirect(vasya_Grades);
+        System.out.println("   " + student_Petya);
+
+        System.out.println("3. Заменить первую оценку Пети на число 5");
+        vasya_Grades[0] = 5;
+
+        System.out.println("После изменения:");
+        System.out.println("   " + student_Vasya);
+        System.out.println("   " + student_Petya);
+
+        System.out.println("\nОбъяснение результата:");
+        System.out.println("Оба студента имеют одинаковые оценки, потому что при копировании");
+        System.out.println("мы скопировали ссылку на один и тот же массив оценок.");
+        System.out.println("Изменение оценок у одного студента влияет на другого.");
+
+        System.out.println("\n4. Создать студента Андрея с независимой копией оценок");
+        //FIXME: п.8 переменные в camel_Case 
+        // int[] independentGrades = vasya_Grades.clone();
+        //FIXTO:
+        int[] independent_Grades = vasya_Grades.clone();
+        student_Andrey = new Student("Андрей", independent_Grades);
+        System.out.println("   " + student_Andrey);
+
+        vasya_Grades[1] = 2;
+        System.out.println("После изменения второй оценки Васи:");
+        System.out.println("   " + student_Vasya);
+        System.out.println("   " + student_Petya);
+        System.out.println("   " + student_Andrey);
+    }
+
+    //FIXME: п.7 Методы в PascalCase 
+    // private static void task4() {
+    //FIXTO:
+    private static void Fourth_Task() {
+        System.out.println("\n=== ЗАДАНИЕ 4 - СОЗДАЕМ ТОЧКУ ===");
+        System.out.println("Создание точек с обязательными координатами:");
+
+        Point point1 = new Point(3, 5);
+        System.out.println("1. Точка с координатами 3;5: " + point1);
+
+        Point point2 = new Point(25, 6);
+        System.out.println("2. Точка с координатами 25;6: " + point2);
+
+        Point point3 = new Point(7, 8);
+        System.out.println("3. Точка с координатами 7;8: " + point3);
+    }
+
+    //FIXME: п.7 Методы в PascalCase
+    // private static void task5() {
+    //FIXTO:
+    private static void Fifth_Task() {
+        System.out.println("\n=== ЗАДАНИЕ 5 - СОЗДАЕМ СТУДЕНТА ===");
+
+        System.out.println("1. Студент Вася с оценками: 3,4,5");
+        //FIXME: п.8 переменные в camel_Case 
+        // int[] vasyaGrades = {3, 4, 5};
+        //FIXTO:
+        int[] vasya_Grades = {3, 4, 5};
+        student_Vasya = new Student("Вася", vasya_Grades);
+        System.out.println("   " + student_Vasya);
+
+        System.out.println("2. Студент Максим без оценок");
+        student_Maxim = new Student("Максим");
+        System.out.println("   " + student_Maxim);
+    }
+
+    //FIXME: п.7 Методы в PascalCase 
+    // private static void task6() {
+    //FIXTO:
+    private static void Sixth_Task() {
+        System.out.println("\n=== ЗАДАНИЕ 6 - СТУДЕНТ ОТЛИЧНИК ===");
+
+        System.out.println("1. Студент Вася с оценками 3,4,5,4");
+        //FIXME: п.8 переменные в camel_Case 
+        // int[] vasyaGrades = {3, 4, 5, 4};
+        //FIXTO:
+        int[] vasya_Grades = {3, 4, 5, 4};
+        student_Vasya = new Student("Вася", vasya_Grades);
+        System.out.println("   " + student_Vasya);
+
+        System.out.println("2. Студент Петя с оценками 5,5,5,5");
+        //FIXME: п.8 переменные в camel_Case 
+        // int[] petyaGrades = {5, 5, 5, 5};
+        //FIXTO:
+        int[] petya_Grades = {5, 5, 5, 5};
+        student_Petya = new Student("Петя", petya_Grades);
+        System.out.println("   " + student_Petya);
+
+        System.out.println("\n3. Информация о студентах:");
+
+        System.out.println("Вася:");
+        System.out.println("   Средний балл: " + student_Vasya.getAverageGrade());
+        System.out.println("   Отличник: " + (student_Vasya.isExcellentStudent() ? "Да" : "Нет"));
+
+        System.out.println("Петя:");
+        System.out.println("   Средний балл: " + student_Petya.getAverageGrade());
+        System.out.println("   Отличник: " + (student_Petya.isExcellentStudent() ? "Да" : "Нет"));
+    }
 }
