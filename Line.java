@@ -2,28 +2,24 @@ public class Line {
     private Point start;
     private Point end;
 
-    //FIXME: Код не должен содержать комментариев по типу "конструктор, геттер", не использовать сокращения
-    // // Конструктор
+    //FIXME: п.13 Конструктор не валидирует данные (нет проверки на null)
     // public Line(Point start, Point end) {
-    //   this.start = start;
-    //   this.end = end;
-    // }
-
-    // // Конструктор для горизонтальной линии
-    // public Line(int y, int start_X, int end_X) {
-    //   this.start = new Point(start_X, y);
-    //   this.end = new Point(end_X, y);
+    //     this.start = start;
+    //     this.end = end;
     // }
     //FIXTO:
     public Line(Point start, Point end) {
+        if (start == null || end == null) {
+            throw new IllegalArgumentException("Точки не могут быть null");
+        }
         this.start = start;
         this.end = end;
     }
 
-    //FIXME: не использовать сокращения
+    //FIXME: п.11 Использованы сокращения x1, x2 вместо понятных имён, п.8 переменные должны быть в camel_Case (start_X, end_X)
     // public Line(int y, int x1, int x2) {
-    //   this.start = new Point(x1, y);
-    //   this.end = new Point(x2, y);
+    //     this.start = new Point(x1, y);
+    //     this.end = new Point(x2, y);
     // }
     //FIXTO:
     public Line(int y, int start_X, int end_X) {
@@ -31,40 +27,46 @@ public class Line {
         this.end = new Point(end_X, y);
     }
 
-    //FIXME: Код не должен содержать комментариев по типу "конструктор, геттер", методы пишутся в PascalCase
-
-    // // Геттеры
+    //FIXME: п.14 Геттер возвращает прямую ссылку на внутреннее состояние, п.7 методы должны быть в PascalCase
     // public Point getStart() {
-    //   return start;
-    // }
-
-    // public Point getEnd() {
-    //   return end;
-    // }
-
-    // // Сеттеры
-    // public void setStart(Point start) {
-    //   this.start = start;
-    // }
-
-    // public void setEnd(Point end) {
-    //   this.end = end;
+    //     return start;
     // }
     //FIXTO:
     public Point GetStart() {
-        return start;
+        return new Point(start.getX(), start.getY());
     }
 
+    //FIXME: п.14 Геттер возвращает прямую ссылку на внутреннее состояние, п.7 методы должны быть в PascalCase
+    // public Point getEnd() {
+    //     return end;
+    // }
+    //FIXTO:
     public Point GetEnd() {
-        return end;
+        return new Point(end.getX(), end.getY());
     }
 
+    //FIXME: п.13 Сеттер не валидирует данные (нет проверки на null), п.7 методы должны быть в PascalCase
+    // public void setStart(Point start) {
+    //     this.start = start;
+    // }
+    //FIXTO:
     public void SetStart(Point start) {
-        this.start = start;
+        if (start == null) {
+            throw new IllegalArgumentException("Точка не может быть null");
+        }
+        this.start = new Point(start.getX(), start.getY());
     }
 
+    //FIXME: п.13 Сеттер не валидирует данные (нет проверки на null), п.7 методы должны быть в PascalCase
+    // public void setEnd(Point end) {
+    //     this.end = end;
+    // }
+    //FIXTO:
     public void SetEnd(Point end) {
-        this.end = end;
+        if (end == null) {
+            throw new IllegalArgumentException("Точка не может быть null");
+        }
+        this.end = new Point(end.getX(), end.getY());
     }
 
     @Override
@@ -72,13 +74,11 @@ public class Line {
         return "Линия от " + start.toString() + " до " + end.toString();
     }
 
-    //FIXME: Код не должен содержать комментариев по типу "конструктор, геттер", методы пишутся в PascalCase, 
-    //сокращения в названиях не допустимы
-    // // Метод для вычисления длины линии
+    //FIXME: п.8 Имена переменных должны быть в camel_Case (dx, dy используют сокращения, нет подчёркиваний)
     // public double getLength() {
-    //   int dx = end.getX() - start.getX();
-    //   int dy = end.getY() - start.getY();
-    //   return Math.sqrt(dx * dx + dy * dy);
+    //     int dx = end.getX() - start.getX();
+    //     int dy = end.getY() - start.getY();
+    //     return Math.sqrt(dx * dx + dy * dy);
     // }
     //FIXTO:
     public double GetLength() {
