@@ -2,8 +2,12 @@ import java.util.Arrays;
 
 
 public class Main {
-  private static Point point1, point2, point3;
-  private static Line line1, line2, line3;
+  //FIXME: не использовать сокращения 
+  // private static Point point1, point2, point3;
+  // private static Line first_Line, second_Line, third_Line;
+  //FIXME:
+  private static Point first_Point, second_Point, third_Point;
+  private static Line first_Line, second_Line, third_Line;
   private static Student studentVasya, studentPetya, studentAndrey, studentMaxim;
 
   public static void main(String[] args) {
@@ -14,8 +18,10 @@ public class Main {
 
     System.out.println("\nПРОГРАММА ЗАВЕРШЕНА");
   }
-
-  private static void showMenu() {
+//FIXME: Методы в PascalCase
+  // private static void showMenu() {
+//FIXTO:
+   private static void ShowMenu() {
     while (true) {
       System.out.println("\n=== ГЛАВНОЕ МЕНЮ ===");
       System.out.println("1. Точка координат (3 точки с разными координатами)");
@@ -55,27 +61,42 @@ public class Main {
     }
   }
 
-//ТОЧКА КООРДИНАТ
+//FIXME: Методы в PascalCase
+  // private static void task1() {
+  //FIXTO:
+    private static void first_Task() {
 
-  private static void task1() {
     System.out.println("\nЗАДАНИЕ 1 - ТОЧКА КООРДИНАТ");
     System.out.println("Создание трех точек с разными координатами");
     System.out.println("Введите координаты с клавиатуры:\n");
 
     System.out.println("Точка 1:");
-    int x1 = Validator.getNumber("Введите X: ");
-    int y1 = Validator.getNumber("Введите Y: ");
-    point1 = new Point(x1, y1);
+    //FIXME: названия без сокращеений
+    // int x1 = Validator.getNumber("Введите X: ");
+    // int y1 = Validator.getNumber("Введите Y: ");
+    // point1 = new Point(x1, y1);
+    //   System.out.println("\nТочка 2:");
+    // int second_X = Validator.getNumber("Введите X: ");
+    // int second_Y = Validator.getNumber("Введите Y: ");
+    // point2 = new Point(second_X, second_Y);
 
+    // System.out.println("\nТочка 3:");
+    // int x3 = Validator.getNumber("Введите X: ");
+    // int y3 = Validator.getNumber("Введите Y: ");
+    // point3 = new Point(x3, y3);
+    //FIXTO:
+      int first_X = Validator.getNumber("Введите X: ");
+    int first_Y = Validator.getNumber("Введите Y: ");
+    point1 = new Point(first_X, first_Y);
     System.out.println("\nТочка 2:");
-    int x2 = Validator.getNumber("Введите X: ");
-    int y2 = Validator.getNumber("Введите Y: ");
-    point2 = new Point(x2, y2);
+    int second_X = Validator.getNumber("Введите X: ");
+    int second_Y = Validator.getNumber("Введите Y: ");
+    point2 = new Point(second_X, second_Y);
 
     System.out.println("\nТочка 3:");
-    int x3 = Validator.getNumber("Введите X: ");
-    int y3 = Validator.getNumber("Введите Y: ");
-    point3 = new Point(x3, y3);
+    int third_X = Validator.getNumber("Введите X: ");
+    int third_Y = Validator.getNumber("Введите Y: ");
+    point3 = new Point(third_X, third_Y);
 
     System.out.println("\nТочки успешно созданы!");
     System.out.println("Текстовое представление:");
@@ -84,66 +105,121 @@ public class Main {
     System.out.println("Точка 3: " + point3.toString());
   }
 
-  //ПРЯМАЯ
+//FIXME: методы в PascalCase, названия без сокращений
+  // private static void task2() {
+  //FIXTO:
+    private static void second_Task() {
 
-  private static void task2() {
     System.out.println("\nЗАДАНИЕ 2 - ПРЯМАЯ");
+//FIXME: названия без сокращений
+  //   System.out.println("1. Линия 1 с началом в т. {1;3} и концом в т.{23;8}");
+  //   Point start1 = new Point(1, 3);
+  //   Point end1 = new Point(23, 8);
+  //   line1 = new Line(start1, end1);
+  //   System.out.println("   " + line1);
 
-    System.out.println("1. Линия 1 с началом в т. {1;3} и концом в т.{23;8}");
-    Point start1 = new Point(1, 3);
+  //   System.out.println("2. Линия 2, горизонтальная, на высоте 10, от точки 5 до точки 25");
+  //   line2 = new Line(10, 5, 25);
+  //   System.out.println("   " + line2);
+
+  //   System.out.println("3. Линия 3 (начинается там же, где линия 1, заканчивается там же, где линия 2)");
+  //   line3 = new Line(line1.getStart(), line2.getEnd());
+  //   System.out.println("   " + line3);
+
+  //   System.out.println("\n4. Изменение координат первой и второй линий");
+  //   System.out.println("Текущее состояние линии 3: " + line3);
+
+  //   System.out.println("\n--- Изменение Линии 1 ---");
+  //   changeLineFromInput(line1);
+
+  //   System.out.println("\n--- Изменение Линии 2 ---");
+  //   changeLineFromInput(line2);
+
+  //   System.out.println("\nПосле изменения линий 1 и 2:");
+  //   System.out.println("Линия 1: " + line1);
+  //   System.out.println("Линия 2: " + line2);
+  //   System.out.println("Линия 3: " + line3);
+
+  //   boolean line3ChangedCorrectly =
+  //           line3.getStart().equals(line1.getStart()) &&
+  //                   line3.getEnd().equals(line2.getEnd());
+
+  //   if (line3ChangedCorrectly) {
+  //     System.out.println("Линия 3 корректно изменилась согласно требованиям пункта 3");
+  //   }
+
+  //   System.out.println("\n5. Изменение координат первой линии без изменения третьей линии");
+  //   changeLine1WithoutAffectingLine3();
+
+  //   System.out.println("\nФинальное состояние:");
+  //   System.out.println("Линия 1: " + line1);
+  //   System.out.println("Линия 2: " + line2);
+  //   System.out.println("Линия 3: " + line3);
+  // }
+//FIXTO:
+      System.out.println("1. Линия 1 с началом в т. {1;3} и концом в т.{23;8}");
+    Point first_Point = new Point(1, 3);
     Point end1 = new Point(23, 8);
-    line1 = new Line(start1, end1);
-    System.out.println("   " + line1);
+    first_Line = new Line(first_Point, end1);
+    System.out.println("   " + first_Line);
 
     System.out.println("2. Линия 2, горизонтальная, на высоте 10, от точки 5 до точки 25");
-    line2 = new Line(10, 5, 25);
-    System.out.println("   " + line2);
+    second_Line = new Line(10, 5, 25);
+    System.out.println("   " + second_Line);
 
     System.out.println("3. Линия 3 (начинается там же, где линия 1, заканчивается там же, где линия 2)");
-    line3 = new Line(line1.getStart(), line2.getEnd());
-    System.out.println("   " + line3);
+    third_Line = new Line(first_Line.getStart(), second_Line.getEnd());
+    System.out.println("   " + third_Line);
 
     System.out.println("\n4. Изменение координат первой и второй линий");
-    System.out.println("Текущее состояние линии 3: " + line3);
+    System.out.println("Текущее состояние линии 3: " + third_Line);
 
     System.out.println("\n--- Изменение Линии 1 ---");
-    changeLineFromInput(line1);
+    ChangeLineFromInput(first_Line);
 
     System.out.println("\n--- Изменение Линии 2 ---");
-    changeLineFromInput(line2);
+    ChangeLineFromInput(second_Line);
 
     System.out.println("\nПосле изменения линий 1 и 2:");
-    System.out.println("Линия 1: " + line1);
-    System.out.println("Линия 2: " + line2);
-    System.out.println("Линия 3: " + line3);
+    System.out.println("Линия 1: " + first_Line);
+    System.out.println("Линия 2: " + second_Line);
+    System.out.println("Линия 3: " + third_Line);
+//FIXME: переменные в camel_Case
+    // boolean ThirdLineChangedCorrectly =
+//FIXTO:
+       boolean third_Line_Changed_Correctly =
+            third_Line.getStart().equals(first_Line.getStart()) &&
+                    third_Line.getEnd().equals(second_Line.getEnd());
 
-    boolean line3ChangedCorrectly =
-            line3.getStart().equals(line1.getStart()) &&
-                    line3.getEnd().equals(line2.getEnd());
-
-    if (line3ChangedCorrectly) {
+    if (third_Line_Changed_Correctly) {
       System.out.println("Линия 3 корректно изменилась согласно требованиям пункта 3");
     }
 
     System.out.println("\n5. Изменение координат первой линии без изменения третьей линии");
-    changeLine1WithoutAffectingLine3();
+    ChangeFirstLineWithoutAffectingthird_Line();
 
     System.out.println("\nФинальное состояние:");
-    System.out.println("Линия 1: " + line1);
-    System.out.println("Линия 2: " + line2);
-    System.out.println("Линия 3: " + line3);
+    System.out.println("Линия 1: " + first_Line);
+    System.out.println("Линия 2: " + second_Line);
+    System.out.println("Линия 3: " + third_Line);
   }
+//FIXME: переменные в camel_Case
+  // private static void ChangeFirstLineWithoutAffectingthird_Line() {
+//FIXTO:
+    private static void change_First_Line_Without_Affecting_Third_Line() {
 
-  private static void changeLine1WithoutAffectingLine3() {
     boolean success = false;
 
     while (!success) {
       System.out.println("\n--- Изменение Линии 1 без влияния на Линию 3 ---");
-      System.out.println("Текущая Линия 1: " + line1);
-      System.out.println("Текущая Линия 3: " + line3);
-
-      Point originalFirstPoint = line1.getStart();
-      Point line3StartBefore = new Point(line3.getStart().getX(), line3.getStart().getY());
+      System.out.println("Текущая Линия 1: " + first_Line);
+      System.out.println("Текущая Линия 3: " + third_Line);
+    //FIXME: переменные пишутся в camel_Case
+      // Point originalFirstPoint = first_Line.getStart();
+      // Point third_LineStartBefore = new Point(third_Line.getStart().getX(), third_Line.getStart().getY());
+    //FIXTO:
+      Point original_First_Point = first_Line.getStart();
+      Point third_Line_Start_Before = new Point(third_Line.getStart().getX(), third_Line.getStart().getY());
 
       System.out.println("Введите новые координаты для Линии 1:");
 
@@ -155,26 +231,26 @@ public class Main {
       int endX = Validator.getNumber("Введите X конца: ");
       int endY = Validator.getNumber("Введите Y конца: ");
 
-      Point newStart1 = new Point(startX, startY);
+      Point newfirst_Point = new Point(startX, startY);
       Point newEnd1 = new Point(endX, endY);
 
-      line1.setStart(newStart1);
-      line1.setEnd(newEnd1);
+      first_Line.setStart(newfirst_Point);
+      first_Line.setEnd(newEnd1);
 
       System.out.println("После изменения:");
-      System.out.println("Линия 1: " + line1);
-      System.out.println("Линия 3: " + line3);
+      System.out.println("Линия 1: " + first_Line);
+      System.out.println("Линия 3: " + third_Line);
 
-      boolean firstPointChanged = !originalFirstPoint.equals(line1.getStart());
+      boolean firstPointChanged = !originalFirstPoint.equals(first_Line.getStart());
 
       if (firstPointChanged) {
         System.out.println("\nОШИБКА: Первая точка первой линии изменилась!");
         System.out.println("Первая точка до: " + originalFirstPoint);
-        System.out.println("Первая точка после: " + line1.getStart());
+        System.out.println("Первая точка после: " + first_Line.getStart());
         System.out.println("Пожалуйста, введите координаты заново...");
 
-        line1.setStart(originalFirstPoint);
-        line1.setEnd(new Point(endX, endY));
+        first_Line.setStart(originalFirstPoint);
+        first_Line.setEnd(new Point(endX, endY));
       } else {
         System.out.println("\nПервая точка первой линии не изменилась!");
         success = true;
