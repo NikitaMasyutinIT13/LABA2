@@ -9,8 +9,7 @@ public class Line {
     // }
     //FIXTO:
     public Line(Point start, Point end) {
-        // По заданию 2.1: линия описывается координатами начала и конца
-        // Валидация: точки не могут быть null
+        
         if (start == null || end == null) {
             throw new IllegalArgumentException("Начальная и конечная точки не могут быть null");
         }
@@ -35,7 +34,6 @@ public class Line {
     // }
     //FIXTO:
     public Point GetStart() {
-        // Возвращаем копию, чтобы нельзя было изменить внутреннее состояние
         return new Point(start.GetX(), start.GetY());
     }
 
@@ -85,7 +83,6 @@ public class Line {
     // }
     //FIXTO:
     public double GetLength() {
-        // По заданию 5.3: возвращает расстояние между точками начала и конца
         int delta_X = end.GetX() - start.GetX();
         int delta_Y = end.GetY() - start.GetY();
         return Math.sqrt(delta_X * delta_X + delta_Y * delta_Y);
