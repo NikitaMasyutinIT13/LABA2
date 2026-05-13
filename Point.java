@@ -50,16 +50,9 @@ public class Point {
         return "{" + x + ";" + y + "}";
     }
 
-    //FIXME: п.7 Методы в PascalCase, п.19 @Override, неправильная сигнатура
-    // public boolean equals(Point other) {
-    //     return this.x == other.x && this.y == other.y;
-    // }
-    //FIXTO:
-    @Override
-    public boolean Equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Point other = (Point) obj;
-        return x == other.x && y == other.y;
+    public boolean equals(Point other) {
+        return this.x == other.x && this.y == other.y;
     }
+    
+    
 }
