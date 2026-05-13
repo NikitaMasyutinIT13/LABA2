@@ -50,8 +50,15 @@ public class Point {
         return "{" + x + ";" + y + "}";
     }
 
-    public boolean equals(Point other) {
-        return this.x == other.x && this.y == other.y;
+    //FIXME: п.19 @Override, неправильная сигнатура (п.7 не применяется к переопределяемым методам)
+    // public boolean equals(Point other) {
+    //FIXTO:
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Point other = (Point) obj;
+        return x == other.x && y == other.y;
     }
     
     
