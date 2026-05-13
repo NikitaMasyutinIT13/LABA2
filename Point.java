@@ -50,7 +50,7 @@ public class Point {
         return "{" + x + ";" + y + "}";
     }
 
-    //FIXME: п.19 @Override, неправильная сигнатура (п.7 не применяется к переопределяемым методам)
+    //FIXME: п.19 @Override, неправильная сигнатура 
     // public boolean equals(Point other) {
     //FIXTO:
     @Override
